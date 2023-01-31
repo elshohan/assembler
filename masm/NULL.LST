@@ -1,0 +1,64 @@
+Microsoft (R) Macro Assembler Version 5.00                  1/30/23 20:58:05
+                                                             Page     1-1
+
+
+       1				.MODEL SMALL 
+       2 0000				.DATA 
+       3				 
+       4 0000  48 4F 4C 41 20 4D 55	MENSAJE DB 'HOLA MUNDO JOSE TERAN!$' 
+       5       4E 44 4F 20 4A 4F 53	
+       6       45 20 54 45 52 41 4E	
+       7       21 24			
+       8 0000				.CODE 
+       9				INICIO; 
+NOMBREARCHIVO.ASM(6): error A2105: Expected: instruction or directive
+      10				 
+      11 0000  B8 ---- R		MOV AX,@DATA 
+      12 0003  8E D8			MOV DS,AX 
+      13				 
+      14 0005  B4 09			MOV AH,09H 
+      15				MO DX,OFFSET MENSAJE 
+NOMBREARCHIVO.ASM(12): error A2105: Expected: instruction or directive
+      16				 
+      17 0007  CD 21			INT 21H 
+      18				 
+      19 0009  B8 4C00			MOV AX, 4C00H 
+      20 000C  CD 21			INT 21H 
+      21 0400				.STACK 
+      22				 
+      23 000E				END INICIO 
+NOMBREARCHIVO.ASM(20): error A2009: Symbol not defined: INICIO
+      24 000E				END INICIO 
+Microsoft (R) Macro Assembler Version 5.00                  1/30/23 20:58:05
+                                                             Symbols-1
+
+
+Segments and Groups:
+
+                N a m e         	Length	 Align	Combine Class
+
+DGROUP . . . . . . . . . . . . .  	GROUP
+  _DATA  . . . . . . . . . . . .  	0017	WORD	PUBLIC	'DATA'
+  STACK  . . . . . . . . . . . .  	0400	PARA	STACK	'STACK'
+_TEXT  . . . . . . . . . . . . .  	000E	WORD	PUBLIC	'CODE'
+
+Symbols:            
+
+                N a m e         	Type	 Value	 Attr
+
+MENSAJE  . . . . . . . . . . . .  	L BYTE	0000	_DATA
+
+@CODE  . . . . . . . . . . . . .  	TEXT  _TEXT		
+@CODESIZE  . . . . . . . . . . .  	TEXT  0		
+@DATASIZE  . . . . . . . . . . .  	TEXT  0		
+@FILENAME  . . . . . . . . . . .  	TEXT  NOMBREARCHIVO		
+
+
+     20 Source  Lines
+     20 Total   Lines
+     15 Symbols
+
+  50584 + 465960 Bytes symbol space free
+
+      0 Warning Errors
+      3 Severe  Errors
